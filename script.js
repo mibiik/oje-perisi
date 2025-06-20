@@ -188,14 +188,16 @@ async function analyzeImage() {
         return;
     }
     
-    // Hemen sayfanın en aşağısına yumuşak kaydırma
-    window.scrollTo({ 
-        top: document.body.scrollHeight, 
-        behavior: 'smooth' 
-    });
-    
     showLoading();
     hideMessages();
+    
+    // İlk önce loading bölümünü sayfanın üst kısmına getir (düşünme ekranını göster)
+    setTimeout(() => {
+        document.getElementById('loading').scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+        });
+    }, 100);
     
     try {
         // Resmi base64'e çevir
