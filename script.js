@@ -188,10 +188,10 @@ async function analyzeImage() {
         return;
     }
     
-    // Hemen analiz bölümüne yumuşak kaydırma
-    document.getElementById('loading').scrollIntoView({ 
+    // Hemen "Bulunan Renkler" bölümüne yumuşak kaydırma
+    document.getElementById('resultsSection').scrollIntoView({ 
         behavior: 'smooth', 
-        block: 'center' 
+        block: 'start' 
     });
     
     showLoading();
