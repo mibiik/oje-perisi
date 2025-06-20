@@ -188,6 +188,12 @@ async function analyzeImage() {
         return;
     }
     
+    // Hemen analiz bölümüne yumuşak kaydırma
+    document.getElementById('loading').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+    });
+    
     showLoading();
     hideMessages();
     
@@ -378,7 +384,13 @@ function displayResults(result) {
     });
     
     resultsSection.style.display = 'block';
-    resultsSection.scrollIntoView({ behavior: 'smooth' });
+    // Daha yumuşak ve ortalanmış kaydırma
+    setTimeout(() => {
+        resultsSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }, 300); // 300ms bekleyip kaydır
 }
 
 // Oje olmayan resimler için tatlı itiraz
@@ -395,7 +407,13 @@ function showFairyComplaint(complaint) {
     colorsGrid.appendChild(complaintDiv);
     
     resultsSection.style.display = 'block';
-    resultsSection.scrollIntoView({ behavior: 'smooth' });
+    // Daha yumuşak ve ortalanmış kaydırma
+    setTimeout(() => {
+        resultsSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }, 300); // 300ms bekleyip kaydır
 }
 
 // Renk item'ı oluştur
